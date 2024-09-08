@@ -14,6 +14,7 @@ void ScreenRuler::paintEvent(QPaintEvent *event) {
     p.setBrush(pubRef::dBack);
     p.drawRoundedRect(rect(),4,4);
 
+
     int cPosition = 10;
     while (cPosition < width()){
         int length;

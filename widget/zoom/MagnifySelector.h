@@ -34,6 +34,7 @@ public:
 
     void showZoom();
 
+
 protected:
     void mousePressEvent(QMouseEvent *event) override;
 

@@ -135,7 +135,7 @@ void PopMenu::mousePressEvent(QMouseEvent *event) {
     for (auto &pair: hoveredFunc) {
         if (hoveredFunc[pair.first]) {
             if (event->button() == 1) {//左键
-                cout << pair.first << "->left click" << endl;
+//                cout << pair.first << "->left click" << endl;
                 if (pair.first == "capture") {
                     //截图
                     captureWidget.display();
@@ -154,7 +154,8 @@ void PopMenu::mousePressEvent(QMouseEvent *event) {
                 if (pair.first == "zoom") {
                     //放大镜工具
                     //显示一个放大镜选择框
-                    auto r = QRect(100, 100, 100, 100);
+                    QPoint here = event->pos() + this->pos();
+                    auto r = QRect(here.x(), here.y(), 100, 100);
                     delete magWidget;
                     magWidget = new MagnifySelector(r);
                     magWidget->show();

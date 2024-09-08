@@ -58,7 +58,6 @@ void MagnifyRes::launch() {
 
     // 启动线程
     thread->start();
-    move(250, 70);
 }
 
 void MagnifyRes::updateRect() {
@@ -122,10 +121,8 @@ void MagnifyRes::updateTooltip() {
 
 void MagnifyRes::checkRate(double s) {
     double maxRate = min(((pubRef::poiHeight - refY) / (double) refY), ((pubRef::poiWidth - refX) / (double) refX));
-    cout<<"源："<<s<<endl;
     if (s > maxRate) s = maxRate;
     if (s < 1) s = 1;
-    cout<<"修正："<<s<<endl;
     scaleRate = s;
 }
 

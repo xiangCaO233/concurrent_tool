@@ -56,6 +56,7 @@ void MagnifySelector::mousePressEvent(QMouseEvent *event) {
 
 void MagnifySelector::showZoom() {
     magnifyRes.show();
+    magnifyRes.move(pos() + QPoint(width(),0));
 }
 
 void MagnifySelector::mouseMoveEvent(QMouseEvent *event) {
